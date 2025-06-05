@@ -1,6 +1,7 @@
 #include <iostream>
 #include <chrono>
 #include <cstring>
+#include <string>
 
 #define MAX_LEN 10000
 
@@ -32,21 +33,28 @@ void initializing()
   std::cout << "\n";
 }
 
-char* input()
+std::string input()
 {
   std::cout << ">> ";
-  
-  char *inp=new char[MAX_LEN];
-  fgets(inp, MAX_LEN, stdin);
+  std::string inp;
 
-  //std::cin >> inp;
+  while(std::getline(std::cin, inp)) 
+  {
+    break;
+  }
+
+  //char *inp=new char[MAX_LEN];
+  //fgets(inp, MAX_LEN, stdin);
+  std::cout << inp << std::endl;
   
+  //printf("the char is: %s\n", inp);
+
   return inp;
 }
 
 void to_change(char *str, size_t maxlen)
 {
-  char inp;
+  std::string inp;
   input();
   
   //make an if statement in main. if char[] is empty change to an empty string.
@@ -64,7 +72,7 @@ void to_change(char *str, size_t maxlen)
 int main()
 {
 
-  char inp;
+  std::string inp;
 
   initializing();
   
@@ -80,12 +88,16 @@ int main()
   //end = clock();
   printf("the time is: %lf seconds\n", duration);
   
+
+  /*
   if(inp == ' ')
   {
     to_change(&inp, sizeof &inp);
     std::cout << inp;
   }
-  
-  printf("the char is: %s\n", inp);
+  */
+
+  std::cout << inp;
+  //printf("the char is: %s\n", inp);
   return 0;
 }
