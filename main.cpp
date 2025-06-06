@@ -52,22 +52,52 @@ std::string input()
   return inp;
 }
 
-void to_change(char *str, size_t maxlen)
+std::string to_change(/*char *str, size_t maxlen*/)
 {
   std::string inp;
-  input();
-  
+
+  inp = "that strig is empty and it's impossible to calculate anything";
+ 
+  //std::cout << "int the to_change: " << inp << std::endl;
+
   //make an if statement in main. if char[] is empty change to an empty string.
   //and then return a message of an idiot using.
-
-  strncpy(str, "", maxlen-1);
-  str[maxlen] = '\0';
+  //print that strig is empty and it's impossible to calculate anything
+  //strncpy(str, "", maxlen-1);
+  //str[maxlen] = '\0';
 
   //inp = str;
-  //return inp;
+  return inp;
   
 }
 
+float wpm(float ur_wpm)
+{
+  double duration;
+  int length, num_words;
+  std::cout << duration;
+  ur_wpm = num_words / duration;
+
+  return ur_wpm;
+}
+
+int char_count(int length)
+{ 
+  std::string inp;
+
+  length = inp.length();
+
+  return length;
+}
+
+int words_count(int num_words)
+{
+  int length;
+
+  num_words = length/5;
+  
+  return num_words;
+}
 
 int main()
 {
@@ -88,16 +118,17 @@ int main()
   //end = clock();
   printf("the time is: %lf seconds\n", duration);
   
-
-  /*
-  if(inp == ' ')
+  if(inp.empty())
   {
-    to_change(&inp, sizeof &inp);
+    //to_change(inp, sizeof inp)
+    to_change();
     std::cout << inp;
   }
-  */
 
-  std::cout << inp;
-  //printf("the char is: %s\n", inp);
+  float ur_wpm;
+  int length, num_words;
+
+  printf("chars: %s\nwords: %d\nwpm: %f\n", char_count(length), words_count(num_words), wpm(ur_wpm));
+
   return 0;
 }
